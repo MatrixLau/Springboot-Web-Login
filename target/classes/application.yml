@@ -1,5 +1,13 @@
 server:
+  #访问localhost:9091/login.html
   port: 9091
 spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    #数据库端口为3316 数据库名为springboot_web_login
+    url: jdbc:mysql://127.0.0.1:3316/springboot_web_login?useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC
+    username: root
+    password: 0113
   resources:
+    #静态资源访问
     static-locations: classpath:/templates

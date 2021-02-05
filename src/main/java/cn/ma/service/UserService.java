@@ -1,21 +1,28 @@
-package cn.ma.services;
+package cn.ma.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import cn.ma.bean.Result;
 import cn.ma.bean.User;
+import cn.ma.mapper.UserMapper;
 
 @Service
 public class UserService {
+
+    @Autowired
+    private UserMapper userMapper;
 
     public Result login(User user) {
         Result result = new Result();
         result.setSuccess(false);
         result.setDetail(null);
         try {
-            if (user.getUsername().equals("root") & user.getPasswd().equals("root")) {
+            Long userid = userMapper.login(user);
+            if (userid != null) {
+                user.setId(userid);
                 result.setMsg("登录成功！");
-                result.setDetail("用户名：" + user.getUsername() + "密码：" + user.getPasswd());
+                result.setDetail("id:" + userid + "username:" + user.getUsername() + "passwd:" + user.getPasswd());
             }
         } catch (Exception e) {
             result.setMsg(e.getMessage());

@@ -1,4 +1,4 @@
-package cn.ma.controllers;
+package cn.ma.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -8,7 +8,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import cn.ma.bean.Result;
 import cn.ma.bean.User;
-import cn.ma.services.UserService;
+import cn.ma.mapper.UserMapper;
+import cn.ma.service.UserService;
 
 @RestController
 @RequestMapping("/user")
