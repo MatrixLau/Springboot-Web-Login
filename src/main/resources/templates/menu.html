@@ -1,0 +1,23 @@
+<head>
+  <meta charset="utf-8" />
+  <title>用户登录</title>
+</head>
+<body>
+  <form name="form" method="POST">
+    用户名：<input name="username" type="text" /><br />
+    密码：<input name="passwd" type="password" /><br />
+    <input
+      form.action="/user/login"
+      type="button"
+      value="登录"
+      onclick="form.action = '/user/login'; form.submit();"
+    />
+    <input
+      form.action="/user/register"
+      type="button"
+      value="注册"
+      onclick="form.action = '/user/register'; form.submit();"
+    />
+  </form>
+</body>
+<script></script>
