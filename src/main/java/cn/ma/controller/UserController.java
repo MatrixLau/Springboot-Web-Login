@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import cn.ma.bean.Result;
 import cn.ma.bean.User;
-import cn.ma.mapper.UserMapper;
 import cn.ma.service.UserService;
 
 @RestController

@@ -21,11 +21,13 @@ public class UserService {
             Long userid = userMapper.login(user);
             if (userid != null) {
                 user.setId(userid);
+                result.setSuccess(true);
                 result.setMsg("登录成功！");
-                result.setDetail("id:" + userid + "username:" + user.getUsername() + "passwd:" + user.getPasswd());
+                result.setDetail("id:" + userid + ",username:" + user.getUsername() + ",passwd:" + user.getPasswd());
             }
         } catch (Exception e) {
-            result.setMsg(e.getMessage());
+            result.setMsg("登录失败！");
+            result.setDetail("原因：" + e.getMessage());
             e.printStackTrace();
         }
         return result;
